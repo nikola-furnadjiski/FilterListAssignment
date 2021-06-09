@@ -1,0 +1,42 @@
+<div class="codeflair-assignment">
+  <section class="user-filter">
+    <label for="input-field">Filter Users by Name</label>
+    <input id="input-field" type="text" [(ngModel)]="searchText" (input)="onSearchFieldChange()"/>
+    <div>
+    </div>
+    <div name="fade">
+      <span class="user-filter__no-users-found"></span>
+    </div>
+    <button class="filter-button" (click)="onSortByAge()">Sort by Age</button>
+  </section>
+  <div class="user-list">
+    <ul>
+      <ol
+        *ngFor="let user of filteredUsers"
+        (click)="onShowExtraInfo(user.id)"
+        [@listAnimation]
+      >
+        <article class="user">
+          <button class="user__trigger">
+            <div class="user__image">
+              <img [src]="user.img">
+            </div>
+            <div class="user__info">
+              <h2>{{user.firstname + " " + user.lastname}}</h2>
+              <p class="user__age">{{user.age}}</p>
+            </div>
+          </button>
+          <div *ngIf="this.clickedUsers.includes(user.id)" class="user__extra-info">
+            {{user.initials}}
+          </div>
+        </article>
+      </ol>
+    </ul>
+    <div *ngIf="searchText && searchText.length >= 3">
+      Users Found: {{filteredUsers.length}}
+    </div>
+  </div>
+  <div *ngIf="!filteredUsers.length">
+    results are empty :(
+  </div>
+</div>

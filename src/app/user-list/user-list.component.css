@@ -1,0 +1,78 @@
+body {
+  background: white;
+  padding: 20px;
+  font-family: Helvetica;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: block;
+}
+
+.user-list {
+  margin-top: 20px;
+}
+
+.user-list li {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px 15px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.filter-button {
+  display: block;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.user__image {
+  flex-basis: 50px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.user-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.user__trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.user__age {
+  font-size: 0.8rem;
+  color: gray;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.user-filter__no-users-found {
+  display: inline-block;
+  margin-left: 10px;
+}
